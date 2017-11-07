@@ -1,0 +1,50 @@
+#singleType, #multiType, #pickButtons, #betSection, #placeBet, #betError, .pickForm{
+	display:none;
+}
+
+.row{
+	margin-bottom: 10px;
+}
+
+.col-centered{
+	display: block;
+	width: auto;
+	float:none;
+	margin: 0 auto;
+}
+
+.colour{
+	background-color: #F00;
+}
+
+.colourtwo{
+	background-color: #0F0;
+}
+
+.pickContents{
+	text-align:center;
+	border: 2px solid #000;
+}
+
+.betButtons{
+	width: 140px;
+}
+
+#singlePickHeader, #multiPickHeader01, #mulitPickHeader02, #multiPickHeader03{
+	height: 120px;
+}
+
+#singlePickChoice, #multiPickChoice01, #multiPickChoice02, #multiPickChoice03{
+	height: 50px;
+}
+
+.modal-body > .table, 
+.modal-body > .table > tbody > tr > td, 
+.modal-body > .table > tbody > tr > th, 
+.modal-body > .table > tfoot > tr > td, 
+.modal-body > .table > tfoot > tr > th, 
+.modal-body > .table > thead > tr > td,
+.modal-body >.table > thead > tr > th {
+	border-bottom:none;
+	border-top:none;
+}
