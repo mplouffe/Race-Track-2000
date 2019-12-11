@@ -1,73 +1,3 @@
-<?php
-	
-	$loginError = false;
-
-	if(isset($_POST['login']))
-	{
-		$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-		$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-		if($username != '' && $password != '')
-		{
-			// connect to the db
-			require 'data/connect.php';
-			// query the db for the user information
-			$query = " 	SELECT *
-						FROM users 
-						WHERE username = :username";
-			$statement = $db->prepare($query);
-			$statement->bindValue(':username', $username, PDO::PARAM_STR);
-			$statement->execute();
-
-			// check the query for user information
-			$user = $statement->fetch(PDO::FETCH_ASSOC);
-			
-			if($user == null)
-			{
-				$loginError = true;
-				$loginErrorMessage = "Invalid username/password combination.";
-			}
-			else
-			{
-				if(password_verify($password, $user['password']))
-				{
-					session_start();
-					$_SESSION['userid'] = $user['userid'];
-					
-					if($user['admin'] != null)
-					{
-						header('Location: admin/admin.php');
-						die();
-					}
-					else
-					{
-						header('Location: user/user.php');
-						die();
-					}
-				}
-				else
-				{
-					$loginError = true;
-					$loginErrorMessage = "Invalid username/password combination.";
-				}
-			}
-		}
-		else
-		{
-			$loginEror = true;
-			$loginErrorMessage = "Invalid user name/password provided.";
-		}
-	}
-
-	if(isset($_POST['register']))
-	{
-		// send the user to the register page
-		header('Location: register.php');
-		die();
-	}
-
-?>
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -116,9 +46,6 @@
 					</div>
 				</div>
 			</form>
-			<?php if($loginError): ?>
-				<p><?= $loginErrorMessage ?></p>
-			<?php endif ?>
 		</div>
 	</body>
 </html>
