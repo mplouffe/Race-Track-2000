@@ -1,0 +1,178 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Racetrack 2000",
+        "description": "A simulated horse racing betting website. Race results are simulated server side and replayed on the client side.",
+        "termsOfService": "https://racetrack2000.com/terms",
+        "contact": {
+            "name": "Racetrack2000 Support",
+            "url": "https://racetrack2000.com/support",
+            "email": "support@racetrack2000.com"
+        },
+        "license": {
+            "name": "Creative Commons Attribution-NonCommerical-NoDerivs 3.0 Unported",
+            "url": "https://creativecommons.org/licenses/by-nc-nd/3.0/legalcode"
+        },
+        "version": "1.0.1"
+    },
+    "servers": [
+        {
+            "url": "https://api.racetrack2000.com/v1",
+            "description": "Production server"
+        }
+    ],
+    "paths": {
+        "/horses": {
+            "get": {
+                "description": "Returns all horses from the system that the user has access to.",
+                "responses": {
+                    "200": {
+                        "description": "A list of horses.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/pet"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/horses/{horseId}": {
+
+        },
+        "/{userId}/horses": {
+
+        },
+        "/users": {
+
+        },
+        "/users/{userId}": {
+
+        },
+        "/races": {
+
+        },
+        "/races/{raceId}": {
+
+        },
+        "/{userId}/races": {
+
+        },
+        "/bets": {
+
+        },
+        "/bets/{betId}": {
+
+        },
+        "/{userId}/bets": {
+
+        }
+    },
+    "components": {
+        "schemas": {
+            "Horse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "guid"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "profileImage": {
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "sprites": {
+                        "type": "string"
+                    },
+                    "speed": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "endurance": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "reliability": {
+                        "type": "intgeger",
+                        "format": "int64"
+                    },
+                    "ownedBy": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "lastModifiedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "lastModifiedBy": {
+                        "type": "string"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "accountBalance": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Bet": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "betType": {
+                        "type": "string",
+                        "description": "The type of bet made.",
+                        "default": "show",
+                        "enum": [
+                            "show",
+                            "place",
+                            "win",
+                            "quinella",
+                            "exacta",
+                            "trifecta"
+                        ]
+                    },
+                    ""
+                }
+            }
+        }
+    },
+    "security": [
+
+    ],
+    "tags": [
+
+    ],
+    "externalDocs": {
+
+    }
+}
