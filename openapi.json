@@ -33,7 +33,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/pet"
+                                        "$ref": "#/components/schemas/Horse"
                                     }
                                 }
                             }
@@ -43,6 +43,30 @@
             }
         },
         "/horses/{horseId}": {
+            "get": {
+                "description": "Returns horse with specified id, if it can be found in the database.",
+                "responses": {
+                    "200": {
+                        "description": "The horse with the id provided",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Horse" 
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
         },
         "/{userId}/horses": {
@@ -124,7 +148,8 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "type": "string"
+                        "type": "string",
+                        "format": "guid"
                     },
                     "username": {
                         "type": "string"
@@ -161,18 +186,73 @@
                             "trifecta"
                         ]
                     },
-                    ""
+                    "amount": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "user": {
+                        "type": "string",
+                        "format": "guid"
+                    },
+                    "race": {
+                        "type": "string",
+                        "format": "guid"
+                    },
+                    "picks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "guid"
+                        }
+                    }
+                }
+            },
+            "Race": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "results",
+                    "user",
+                    "raceDate"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "guid"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "guid"
+                        }
+                    },
+                    "user": {
+                        "type": "string",
+                        "format": "guid"
+                    },
+                    "raceDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
                 }
             }
         }
-    },
-    "security": [
-
-    ],
-    "tags": [
-
-    ],
-    "externalDocs": {
-
     }
 }
