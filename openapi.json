@@ -67,25 +67,141 @@
                     }
                 }
             }
-
         },
         "/{userId}/horses": {
-
+            "get": {
+                "description": "Returns the list of horses owned by the user identified by the Id",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Horse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/users": {
-
+            "get": {
+                "description": "Returns the list of users",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/users/{userId}": {
-
+            "get": {
+                "description": "Returns the user identified by the Id",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User" 
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/races": {
-
+            "get": {
+                "description": "Retuns list of all races in the database",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Race"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/races/{raceId}": {
-
+            "get": {
+                "description": "Returns the race identified by the id",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Race"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/{userId}/races": {
-
+            "get": {
+                "description": "Returns the list of races associated with the user id",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Race"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/bets": {
 
