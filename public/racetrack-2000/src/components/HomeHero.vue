@@ -1,17 +1,19 @@
 <template>
-    <v-container
-        fluid
-        fill-height
-        class="home-hero"
-    >
+    <v-container fluid fill-height class="home-hero">
         <v-layout justify-center align-center column>
-            <div class="display-4 font-weight-black light-blue--text outline text-xs-center">
+            <div
+                class="display-4 font-weight-black light-blue--text outline text-xs-center"
+            >
                 RaceTrack 2000
             </div>
-            <div class="display-4 font-weight-black light-blue--text outline text-xs-center mb-3">
+            <div
+                class="display-4 font-weight-black light-blue--text outline text-xs-center mb-3"
+            >
                 The Ulitmate Surreal Race Betting Site
             </div>
-            <div class="display-1 font-weight-bold light-blue--text outline text-xs-center">
+            <div
+                class="display-1 font-weight-bold light-blue--text outline text-xs-center"
+            >
                 All the fun of gambling without any of the money
             </div>
             <v-btn fab class="mt-5 brown darken-4">
