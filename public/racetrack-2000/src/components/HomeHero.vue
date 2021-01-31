@@ -1,6 +1,6 @@
 <template>
     <v-container fluid fill-height class="home-hero">
-        <v-layout justify-center align-center column>
+        <v-layout justify-center align-center column pa-5>
             <div
                 class="display-4 font-weight-black light-blue--text outline text-xs-center"
             >
@@ -33,8 +33,10 @@ export default {
 .home-hero {
     background: url("../assets/tempSplash.jpg");
     background-size: cover;
+    height: 100%;
     width: 100%;
     padding: 0;
     text-shadow: 2px 2px #000;
+    max-height: 100vh;
 }
 </style>
