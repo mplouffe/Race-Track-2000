@@ -1,0 +1,14 @@
+Goals For Tomorrow:
+	1) Write out the design of the site
+	2) Update the layout of the site
+	3) Plan what to update for the site
+	4) Design new racing engine
+	5) Update graphics
+	6) Make 5 substantial changes to the site
+	7) Get the updates live
+	8) Build a splashy intro
+	9) build an about page
+	10) Figure out how to unit test the site
+	11) Make a plan for testing
+	12) Write out a requirements document
+	13) Brainstom requirements
