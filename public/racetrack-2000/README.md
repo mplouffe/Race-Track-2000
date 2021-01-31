@@ -1,4 +1,4 @@
-# vue-app
+# racetrack-2000
 
 ## Project setup
 ```
