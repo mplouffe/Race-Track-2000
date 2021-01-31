@@ -1,9 +1,9 @@
 <template>
-    <v-app>
+    <v-app class="app-style">
         <app-navigation></app-navigation>
-        <v-content transition="slide-x-transition">
+        <v-main transition="slide-x-transition">
             <router-view></router-view>
-        </v-content>
+        </v-main>
     </v-app>
 </template>
 
@@ -18,4 +18,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+html {
+    overflow-y: hidden;
+}
+</style>
