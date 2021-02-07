@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
@@ -46,7 +47,7 @@
     "rules": {}
   },
   "prettier": {
-      "tabWidth": 4
+    "tabWidth": 4
   },
   "browserslist": [
     "> 1%",
