@@ -21,7 +21,7 @@
                             </v-container>
                         </v-img>
                     </v-responsive>
-                    
+
                     <v-card-text>
                         <div>
                             <h3 class="headline mb-0">Bet</h3>
@@ -36,7 +36,13 @@
                     </v-card-text>
 
                     <v-card-actions v-if="['menu'].includes($route.name)">
-                        <v-btn outline block color="green" @click="showRules('bet')">More on Bets</v-btn>
+                        <v-btn
+                            outline
+                            block
+                            color="green"
+                            @click="showRules('bet')"
+                            >More on Bets</v-btn
+                        >
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -70,7 +76,13 @@
                     </v-card-text>
 
                     <v-card-actions v-if="['menu'].includes($route.name)">
-                        <v-btn outline block color="green" @click="showRules('own')">More on Owning</v-btn>
+                        <v-btn
+                            outline
+                            block
+                            color="green"
+                            @click="showRules('own')"
+                            >More on Owning</v-btn
+                        >
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -78,7 +90,10 @@
             <v-flex xs12 sm12 md4>
                 <v-card>
                     <v-responsive>
-                        <v-img src="@/assets/ponyFightClubCard.jpg" height="500px">
+                        <v-img
+                            src="@/assets/ponyFightClubCard.jpg"
+                            height="500px"
+                        >
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
@@ -104,7 +119,13 @@
                     </v-card-text>
 
                     <v-card-actions v-if="['menu'].includes($route.name)">
-                        <v-btn outline block color="green" @click="showRules('fight')">More on Fights</v-btn>
+                        <v-btn
+                            outline
+                            block
+                            color="green"
+                            @click="showRules('fight')"
+                            >More on Fights</v-btn
+                        >
                     </v-card-actions>
                 </v-card>
             </v-flex>
