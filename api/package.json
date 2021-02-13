@@ -2,9 +2,9 @@
   "name": "race-track-2000",
   "version": "1.0.0",
   "description": "A simulated horse racing betting website.",
-  "main": "server\\server.js",
+  "main": "src\\server.js",
   "scripts": {
-    "start": "node server/server",
+    "start": "node src/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
