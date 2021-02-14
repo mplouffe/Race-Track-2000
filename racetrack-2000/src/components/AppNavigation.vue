@@ -31,6 +31,9 @@
             <v-btn to="/join" color="brown lighten-3" class="hidden-sm-and-down"
                 >JOIN</v-btn
             >
+            <v-btn to="/horses" color="brown lighten-3" class="hidden-sm-and-down"
+                >Horses</v-btn
+            >
         </v-toolbar>
     </nav>
 </template>
