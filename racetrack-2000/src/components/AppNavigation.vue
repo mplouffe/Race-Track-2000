@@ -25,15 +25,15 @@
             <router-link to="/">
                 <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
             </router-link>
-            <v-btn to="/menu" class="hidden-sm-and-down">Menu</v-btn>
+            <div v-if="$auth.isAuthenticated">
+                <v-btn to="/menu" class="hidden-sm-and-down">Menu</v-btn>
+                <v-btn to="/horses" class="hidden-sm-and-down">Horses</v-btn>
+            </div>
             <v-spacer class="hidden-sm-and-down"></v-spacer>
-            <v-btn to="/sign-in" class="hidden-sm-and-down">SIGN IN</v-btn>
-            <v-btn to="/join" color="brown lighten-3" class="hidden-sm-and-down"
-                >JOIN</v-btn
-            >
-            <v-btn to="/horses" color="brown lighten-3" class="hidden-sm-and-down"
-                >Horses</v-btn
-            >
+            <div v-if="!$auth.loading">
+                <v-btn v-if="!$auth.isAuthenticated" @click="login" class="hidden-sm-and-down">SIGN IN</v-btn>
+                <v-btn v-if="$auth.isAuthenticated" @click="logout" class="hidden-sm-and-down">LOG OUT</v-btn>
+            </div>
         </v-toolbar>
     </nav>
 </template>
@@ -41,6 +41,16 @@
 <script>
 export default {
     name: "AppNavigation",
+    methods: {
+        login() {
+            this.$auth.loginWithRedirect();
+        },
+        logout() {
+            this.$auth.logout({
+                returnTo: window.location.origin
+            });
+        }
+    },
     data() {
         return {
             appTitle: "RaceTrack 2000",

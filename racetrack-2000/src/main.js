@@ -5,6 +5,22 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 import "@babel/polyfill";
 
+import { domain, clientId } from "../auth_config.json";
+
+import { Auth0Plugin } from "./auth";
+
+Vue.use(Auth0Plugin, {
+    domain,
+    clientId,
+    onRedirectCallback: appState => {
+        router.push(
+            appState && appState.targetUrl
+                ? appState.targetUrl
+                : window.location.pathname
+        );
+    }
+});
+
 Vue.config.productionTip = false;
 
 new Vue({

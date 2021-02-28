@@ -1,5 +1,12 @@
 <template>
-    <horse-table :horses=props.horses></horse-table>
+    <v-container fluid>
+        <v-layout>
+            <horse-table
+                v-bind:horses="horses"
+                v-bind:horses-per-page="horsesPerPage"
+            ></horse-table>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>

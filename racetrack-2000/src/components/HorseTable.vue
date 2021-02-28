@@ -1,5 +1,6 @@
 <template>
     <v-container fluid fill-height>
+        <v-layout justify-center align-center column pa-5>
         <v-data-iterator
             :items="horses"
             :items-per-page.sync="horsesPerPage"
@@ -19,7 +20,7 @@
             <template v-slot:default="props">
                 <v-row>
                     <v-col
-                        v-for="horse in props.horses"
+                        v-for="horse in props.items"
                         :key="horse.name"
                         cols="12"
                         sm="6"
@@ -27,7 +28,7 @@
                         lg="3"
                     >
                         <v-card>
-                            <v-card-title class="subheading font-wheight-bold">
+                            <v-card-title class="subheading font-weight-bold">
                                 {{ horse.name }}
                             </v-card-title>
                             <v-divider></v-divider>
@@ -59,11 +60,19 @@
                 </v-row>
             </template>
         </v-data-iterator>
+        </v-layout>
     </v-container>
 </template>
 
 <script>
     export default {
-        name: 'HorseTable'
+        name: 'HorseTable',
+        props: ['horses', 'horsesPerPage']
     }
 </script>
+
+<style scoped>
+.v-data-iterator {
+    width: 100%;
+}
+</style>
